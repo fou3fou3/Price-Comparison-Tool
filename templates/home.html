@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com%22%3E/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <title>pct-price comparison tool</title>
+</head>
+<body>
+
+    <div class="top_bar">
+
+        <h2 class="heading">Price Comparison Tool</h2>
+        <a href="/about">About</a>
+        
+    </div>
+
+    <img src="/static/fox_logo.png" alt="fox_logo" class="logo">
+    <form action="/"ea method="post">
+    <input type="text" placeholder="search" class="search" id="search" autocomplete="off" name="srch">
+    <button type="submit" value="submit" class="submitb"><img src="/static/search.svg"></button>
+    </form>
+
+    {% if searcharg and ebay and amazon and walmart %}
+        <h1 class="srch_arg">showing results of  "{{searcharg}}"</h1>
+        <div class="listing">
+            <div class="site">
+                <h2>amazon</h2>
+                {% for product in amazon %}
+                    <div class="product">
+                        <h3>product name : {{product['title']}}</h3>
+                        <h3>product price : {{product['price']}}</h3>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="site">
+                <h2>ebay</h2>
+                {% for product in ebay %}
+                    <div class="product">
+                        <h3>product name : {{product['title']}}</h3>
+                        <h3>product price : {{product['price']}}</h3>
+                    </div>
+                {% endfor %}
+
+            </div>
+            <div class="site">
+                <h2>walmart</h2>
+                {% for product in walmart %}
+                    <div class="product">
+                        <h3>product name : {{product['title']}}</h3>
+                        <h3>product price : ${{product['price']}}</h3>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    {% endif %}
+    
+</body>
+</html>

@@ -1,0 +1,128 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto Mono', monospace;
+    color: rgb(17, 17, 17);
+    background-color:#191b1c;
+}
+
+
+
+
+
+.top_bar{
+    background-color: #cc3100;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    height: 74px;
+    width: 100%;
+    display: inline;
+    
+}
+.heading{
+    position: absolute;
+    left: 40%;
+}
+
+.top_bar a{
+    display: block;
+    padding: 28px;
+    color: black;
+    text-decoration: none;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.top_bar a:hover{
+    color: #d7ccc8;
+    background-color: #191b1c;
+}
+
+.logo{
+    position: absolute;
+    height: 23%;
+    width: 10%;
+    top: 17%;
+    left: 45%;
+}
+
+.search{
+    border: none;
+    position: absolute;
+    left: 37%;
+    top: 55%;
+    background-color: #cc3100;
+    color: #000000;
+    height: 4%;
+    width: 25%;
+    border-radius: 30px 30px 30px 30px;
+    padding: 15px;
+    font-size: 20px;
+
+}
+
+.search:hover{
+    background-color: #922706;
+}
+
+#search::placeholder{
+    color: black;
+}
+
+
+
+.search:focus {
+    outline: none;
+    color: black;
+
+}
+
+.submitb{
+    position: absolute;
+    top: 55%;
+    left: 65%;
+    height: 63px;
+    width: 63px;
+    border-radius: 50%;
+    padding: 15px;
+    background-color:#cc3100;
+
+}
+.submitb:hover{
+    background-color: #922706;
+}
+
+.srch_arg{
+    position: absolute;
+    color: #d7ccc8;
+    top: 70%;
+    left: 37%;
+}
+
+.listing{
+    width: 90%;
+    position: absolute;
+    top: 80%;
+    left: 10%;
+    color: #d7ccc8;
+
+}
+.site{
+    position: relative;
+    float:left;
+    padding: 50px 50px;
+    width: 25%;
+
+}
+.product{
+    padding: 50px 50px;
+    border-radius: 3%;
+    background-color: #cc3100;
+    margin-bottom: 25px;
+}
+.product:hover{
+    background-color:#922706 ;
+    color: #f3f1f0;
+}
