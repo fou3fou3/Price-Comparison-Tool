@@ -1,6 +1,4 @@
-from sites_scrapers.amazon import amazon
-from sites_scrapers.ebay import ebay
-from sites_scrapers.walmart import walmart
+from sites_scrapers.scrap_sites import scrap_sites
 from flask import Flask , render_template, request
 
 app = Flask(__name__)
@@ -10,8 +8,8 @@ def home():
     if request.method == 'POST':
         srcharg = request.form['srch']
         if srcharg :
-            return render_template('home.html' , amazon=amazon(srcharg), ebay=ebay(srcharg), walmart=walmart(srcharg), searcharg=srcharg)
-        #@TODO change how all function results are passed , change it to a dictionary 
+            return render_template('home.html' , data = scrap_sites(srcharg))
+            #@TODO add pictures to the results
         else :
             return render_template('home.html')
     return render_template('home.html')
@@ -22,7 +20,7 @@ def about():
 
 @app.route('/<unknown>')
 def uknown(unknown):
-    return f'{unknown} page not found 404!'
+    return f'{unknown} page not found 404!', 404
 
 
 if __name__ == '__main__':

@@ -1,4 +1,4 @@
-from sites_scrapers.get_data import get_data
+from sites_scrapers.get_response import get_response
 from bs4 import BeautifulSoup as bs
 import re
 
@@ -7,7 +7,7 @@ site_url = 'https://walmart.com/search?q='
 def walmart(searcharg):
     try:
         search_argument = searcharg.replace(" ","+")
-        response = get_data(site_url, search_argument)
+        response = get_response(site_url, search_argument)
         soup = bs(response.content, 'html.parser')
         products = soup.find_all('div', {'data-testid':'list-view'})
 

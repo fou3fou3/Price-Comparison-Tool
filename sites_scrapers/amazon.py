@@ -1,6 +1,6 @@
 #amazon api wont work bcz it needs a phone number 
 
-from sites_scrapers.get_data import get_data
+from sites_scrapers.get_response import get_response
 from bs4 import BeautifulSoup as bs
 
 site_url = 'https://amazon.com/s?k=' 
@@ -8,7 +8,7 @@ site_url = 'https://amazon.com/s?k='
 def amazon(searcharg):
     try:
         search_argument = searcharg.replace(" ","+")
-        response = get_data(site_url, search_argument)
+        response = get_response(site_url, search_argument)
         soup = bs(response.content, 'html.parser')
         products = soup.select('[data-component-type="s-search-result"]')
         

@@ -1,6 +1,6 @@
 #ebay needs a phone number also 
 
-from sites_scrapers.get_data import get_data
+from sites_scrapers.get_response import get_response
 from bs4 import BeautifulSoup as bs
 
 site_url = 'https://ebay.com/sch/i.html?_nkw='
@@ -8,7 +8,7 @@ site_url = 'https://ebay.com/sch/i.html?_nkw='
 def ebay(searcharg):
     try:
         search_argument = searcharg.replace(" ","+")
-        response = get_data(site_url, search_argument)
+        response = get_response(site_url, search_argument)
         soup = bs(response.content, 'html.parser')
         products = soup.find_all('div', class_='s-item__wrapper clearfix')
         del products[0]

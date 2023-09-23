@@ -1,62 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCT</title>
+
+    <!-- CSS imports -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Great Vibes' rel='stylesheet'>
     <link rel="stylesheet" href="/static/home.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com%22%3E/">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&family=Roboto+Mono&display=swap" rel="stylesheet">
-    <title>pct-price comparison tool</title>
+
 </head>
+
+
 <body>
 
-    <div class="top_bar">
-
-        <h2 class="heading">Price Comparison Tool</h2>
-        <a href="/about">About</a>
-        
-    </div>
-
-    <img src="/static/fox_logo.png" alt="fox_logo" class="logo">
-    <form action="/"ea method="post">
-    <input type="text" placeholder="search" class="search" id="search" autocomplete="off" name="srch">
-    <button type="submit" value="submit" class="submitb"><img src="/static/search.svg"></button>
-    </form>
-
-    {% if searcharg and ebay and amazon and walmart %}
-        <h1 class="srch_arg">showing results of  "{{searcharg}}"</h1>
-        <div class="listing">
-            <div class="site">
-                <h2>amazon</h2>
-                {% for product in amazon %}
-                    <div class="product">
-                        <h3>product name : {{product['title']}}</h3>
-                        <h3>product price : {{product['price']}}</h3>
-                    </div>
-                {% endfor %}
-            </div>
-            <div class="site">
-                <h2>ebay</h2>
-                {% for product in ebay %}
-                    <div class="product">
-                        <h3>product name : {{product['title']}}</h3>
-                        <h3>product price : {{product['price']}}</h3>
-                    </div>
-                {% endfor %}
-
-            </div>
-            <div class="site">
-                <h2>walmart</h2>
-                {% for product in walmart %}
-                    <div class="product">
-                        <h3>product name : {{product['title']}}</h3>
-                        <h3>product price : ${{product['price']}}</h3>
-                    </div>
-                {% endfor %}
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                </ul>
+                <a class="navbar-text" target="_blank" href="https://github.com/fou3fou3/">
+              Made by Fouad
+                </a>
             </div>
         </div>
+    </nav>
 
-    {% endif %}
-    
+    <div class="center-container">
+        <h1>Price Comparison Tool</h1>
+        <!-- Search Form -->
+        <form action="/" method="post" class="search-form">
+            <input type="text" placeholder="Search" class="search-input" id="search" autocomplete="off" name="srch">
+            <button type="submit" value="submit" class="search-button">Search</button>
+        </form>
+    </div>
+
+    <div class="about-section">
+        <div class="about-content">
+            <h2>About Me</h2>
+            <p>Im fouad im a programer python speceficly, thank you for using this open-source application.</p>
+        </div>
+    </div>
+
+    <!-- JS imports -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
 </body>
+
 </html>

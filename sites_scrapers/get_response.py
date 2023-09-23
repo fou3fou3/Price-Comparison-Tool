@@ -9,7 +9,7 @@ USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTM
 
 #   The function should receive a url ending with the search query after the last slash (/) so the function works .
 
-def get_data(site_url, search_argument):
+def get_response(site_url, search_argument):
   search_url = site_url + search_argument
   request_headers = {
     'User-Agent': USER_AGENT,
