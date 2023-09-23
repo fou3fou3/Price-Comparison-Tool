@@ -4,3 +4,4 @@ This is a tool that compares prices from diffirent sources wich are
 + ebay
 + walmart
 ## Still in Developement
+## Built on Flask-python 
